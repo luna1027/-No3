@@ -11,6 +11,13 @@ class DB
     protected $table;
     protected $pdo;
 
+    public $level = [
+        1 => '普遍級',
+        2 => '輔導級',
+        3 => '保護級',
+        4 => '限制級'
+    ];
+
     public function __construct($table)
     {
         $this->table = $table;
@@ -39,7 +46,7 @@ class DB
         } elseif (isset($args[1])) {
             $sql .=  $args[1];
         }
-
+        // echo $sql;
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -115,19 +122,15 @@ class DB
 
     protected function visualBasic($math, $field, $args)
     {
-        if ($math == 'count') {
+        $sql = "SELECT $math($field) FROM `$this->table` ";
+        if ($args !== 1) {
             if (is_array($args)) {
-                $sql = " SELECT count(*) FROM `$this->table` WHERE " . join(" && ", $this->arrayToSqlArray($args));
+                $sql .= " WHERE " . join(" && ", $this->arrayToSqlArray($args));
             } else {
-                $sql = " SELECT count(*) FROM `$this->table` WHERE " . $args;
-            }
-        } else {
-            if (is_array($args)) {
-                $sql = " SELECT $math(`$field`) FROM `$this->table` WHERE " . join(" && ", $this->arrayToSqlArray($args));
-            } else {
-                $sql = " SELECT $math(`$field`) FROM `$this->table` WHERE " . $args;
+                $sql .= " WHERE " . $args;
             }
         }
+
         return $this->pdo->query($sql)->fetchColumn();
     }
 }

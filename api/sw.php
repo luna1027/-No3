@@ -1,6 +1,6 @@
 <?php
 include_once "./base.php";
-
+prr($_POST);
 $db = new DB($_POST['table']);
 
 $row1 = $db->find($_POST['id1']);

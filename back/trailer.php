@@ -63,17 +63,3 @@
         <input type="reset" value="重製">
     </div>
 </form>
-
-<script src="./js/jquery-1.9.1.min.js"></script>
-<script>
-    function sw(table, id1, id2) {
-        console.log(table, id1, id2);
-        $.post("./api/sw.php", {
-            id1,
-            id2
-        }, () => {
-            location.reload();
-        })
-
-    }
-</script>

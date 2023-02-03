@@ -18,6 +18,7 @@ if (!empty($_POST)) {
   <link rel="stylesheet" href="./css/css.css">
   <link href="./css/s2.css" rel="stylesheet" type="text/css">
   <script src="./js/jquery-1.9.1.min.js"></script>
+  <script src="./js/all.js"></script>
 </head>
 
 <body>
@@ -58,6 +59,7 @@ if (!empty($_POST)) {
     </div>
     <div id="bo"> ©Copyright 2010~2014 ABC影城 版權所有 </div>
   </div>
+  <!-- <script src="./js/jquery-1.9.1.min.js"></script> -->
 </body>
 
 </html>
