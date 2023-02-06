@@ -244,3 +244,94 @@ input:focus {
 a {
 	text-decoration: none;
 }
+
+.poster {
+	position: relative;
+	width: 420px;
+	height: 400px;
+	/* background-color: #eee; */
+}
+
+.pos {
+	position: absolute;
+	display: none;
+	text-align: center;
+	left: calc((420px - 210px)/2);
+	width: 210px;
+	height: 280px;
+	color: #ccc;
+}
+
+.pos img {
+	width: 100%;
+	height: 260px;
+}
+
+.controls {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	width: 420px;
+	height: 110px;
+	align-items: center;
+	justify-content: space-evenly;
+	/* background: #CCC; */
+	margin: 10px auto 0 auto;
+}
+
+.left,
+.right {
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	cursor: pointer;
+}
+
+.left:hover {
+	filter: drop-shadow(1px 1px 4px #ccc);
+}
+
+.right:hover {
+	filter: drop-shadow(1px 1px 4px #ccc);
+}
+
+.left {
+	border-right: 20px solid #E7E7E7;
+	border-left: 20px solid transparent;
+}
+
+.right {
+	border-left: 20px solid #E7E7E7;
+	border-right: 20px solid transparent;
+}
+
+.btns {
+	display: flex;
+	width: 320px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.btn {
+	box-sizing: border-box;
+	position: relative;
+	width: 80px;
+	font-size: 12px;
+	text-align: center;
+	flex-shrink: 0;
+	padding: 3px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	filter: drop-shadow(1px 1px 4px #ccc);
+}
+
+.btn img {
+	width: 100%;
+	height: 80px;
+}
+
+.order{
+	width: 50%;
+	margin: auto;
+}

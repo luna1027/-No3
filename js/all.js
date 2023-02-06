@@ -23,3 +23,4 @@ function showMovie(id) {
         location.reload();
     })
 }
+
