@@ -63,6 +63,7 @@ input:focus {
 	min-height: 766px;
 	border: #000 1px solid;
 	margin: 30px auto 10px auto;
+	box-sizing: border-box;
 }
 
 #top {
@@ -121,7 +122,8 @@ input:focus {
 
 #mm {
 	padding: 10px;
-	min-height: 520px;
+	/* min-height: 520px; */
+	min-height: 494px;
 }
 
 #bo {
@@ -331,7 +333,60 @@ a {
 	height: 80px;
 }
 
-.order{
+.order {
 	width: 50%;
 	margin: auto;
+	margin-bottom: 10px;
+}
+
+.booking {
+	width: 80%;
+	/* height: 420px; */
+	margin: auto;
+	border: 1px solid;
+	background: #fff;
+	margin-bottom: 10px;
+}
+
+.stage {
+	width: 100%;
+	background: #000;
+	color: #FFF;
+	text-align: center;
+}
+
+.seats {
+	display: flex;
+	width: 60%;
+	height: 300px;
+	flex-wrap: wrap;
+	/* border: 1px solid; */
+	margin: auto;
+	padding-bottom: 10px;
+}
+
+.seat {
+	display: flex;
+	width: 20%;
+	height: 25%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border: 1px solid #fff;
+	box-sizing: border-box;
+	padding: 2px;
+}
+
+.info {
+	background: #ccc;
+}
+
+.infoo {
+	width: fit-content;
+	margin: auto;
+	padding: 5px;
+}
+
+.tickets{
+	color: #F00;
 }
