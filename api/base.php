@@ -4,6 +4,7 @@ date_default_timezone_set("Asia/Taipei");
 
 $Trailer = new DB('trailer');
 $Movie = new DB('movie');
+$Order = new DB("orders");
 
 class DB
 {
@@ -98,7 +99,7 @@ class DB
             // prr($keys);
             $sql = "INSERT INTO `$this->table`(" . join(",", $keys) . ") VALUES (" . join(",", $values) . ")";
         }
-        echo $sql;
+        // echo $sql;
         return $this->pdo->exec($sql);
     }
 
@@ -138,7 +139,7 @@ class DB
                 $sql .= " WHERE " . $args;
             }
         }
-
+        // echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
 }

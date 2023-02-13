@@ -139,11 +139,20 @@ $rows = $Movie->all(['sh' => 1,], " && `ondate` BETWEEN '$ondate' AND '$date' OR
     // }
 
     function getBooking() {
-        $.get("./api/get_booking.php", {}, (booking) => {
+        let info = {
+            movie: $(".movie option:selected").text(),
+            date: $(".movie-date option:selected").val(),
+            session: $(".movie-sessions option:selected").val(),
+        }
+
+        $.get("./api/get_booking.php", info, (booking) => {
             $(".seats").html(booking);
-            $(".selectMovie").text($(".movie option:selected").text())
-            $(".selectDate").text($(".movie-date option:selected").text())
-            $(".selectSession").text($(".movie-sessions option:selected").val())
+            // $(".selectMovie").text($(".movie option:selected").text())
+            // $(".selectDate").text($(".movie-date option:selected").text())
+            // $(".selectSession").text($(".movie-sessions option:selected").val())
+            $(".selectMovie").text(info.movie)
+            $(".selectDate").text(info.date)
+            $(".selectSession").text(info.session)
         })
     }
 </script>

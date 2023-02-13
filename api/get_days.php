@@ -11,7 +11,7 @@ if (isset($_POST['id'])) {
     for ($i = 0; $i <= 2; $i++) {
         if (strtotime("$ondate +$i days") >= strtotime($today)) {
             // $days = date("Y-n-j-l", strtotime("$ondate +$i days"));
-            $tt = date("Y-n-j-l", strtotime("$ondate +$i days"));
+            $tt = date("Y-n-j", strtotime("$ondate +$i days"));
             $str = date("n月j日 l", strtotime("$ondate +$i days"));
             echo "<option value='$tt'>$str</option>";
         }

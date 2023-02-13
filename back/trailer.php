@@ -1,4 +1,4 @@
-<h3 class="ct" style="background: #878787; color:#eee">預告片清單</h3>
+<h3 class="ct" style="background: #878787; color:#eee;margin:10px 0;">預告片清單</h3>
 <div style="width: 100%;">
     <div style="display: flex; align-items:center; justify-content:center;text-align:center;">
         <div style="width: 25%; background:#ccc; margin:0 1px;">預告片海報</div>

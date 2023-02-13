@@ -1,7 +1,13 @@
 <?php
 include_once "./base.php";
 
+$orders = $Order->all(['movie' => $_GET['movie'], 'date' => $_GET['date'], 'session' => $_GET['session']]);
 $booking = [];
+foreach ($orders as $order) {
+    $seats = unserialize($order['seats']);
+    $booking = array_merge($booking, $seats);
+}
+
 for ($i = 0; $i < 20; $i++) {
     if ($i < 5) {
         $color = "rgb(255, 200, 50)";
@@ -56,12 +62,13 @@ for ($i = 0; $i < 20; $i++) {
     function checkout() {
         $.post("./api/order.php", {
             seats,
-            movieId: $(".movie option:selected").val(),
+            // movieId: $(".movie option:selected").val(),
             movie: $(".movie option:selected").text(),
             date: $(".movie-date option:selected").val(),
             session: $(".movie-sessions option:selected").val()
         }, (res) => {
             console.log(res);
+            $(".bookingFrom").html(res);
         })
     }
 </script>

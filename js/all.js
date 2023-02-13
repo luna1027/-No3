@@ -5,21 +5,38 @@ function sw(table, id1, id2) {
         id1,
         id2
     }, () => {
-        location.reload();
+        // location.reload();
+        getAllMovies();
     })
 }
 
-function del(table, id) {
-    let chk = confirm('確定刪除?');
+function del(table, id, msg) {
+    let chk = "";
+    if (typeof (msg) != 'undefind') {
+        chk = confirm(msg);
+    } else {
+        chk = confirm('是否確定要刪除?');
+    }
+
     if (chk) {
         $.post('./api/del.php', { table, id }, () => {
-            location.reload();
+            switch (table) {
+                case 'movie':
+                    getAllMovies();
+                    break;
+
+                default:
+                    location.reload();
+                    break;
+            }
         })
     }
 }
 
 function showMovie(id) {
-    $.post('./api/show_movie.php',{id},()=>{
-        location.reload();
+    $.post('./api/show_movie.php', { id }, () => {
+        // location.reload();
+        getAllMovies();
     })
 }
+
